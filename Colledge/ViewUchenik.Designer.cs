@@ -49,6 +49,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.Color.SandyBrown;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(167, 15);
             this.comboBox1.Name = "comboBox1";
@@ -69,12 +70,13 @@
             // 
             // comboBox2
             // 
+            this.comboBox2.BackColor = System.Drawing.Color.SandyBrown;
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(169, 66);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 26;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -114,7 +116,6 @@
             this.Controls.Add(this.tsmUchenikAddIDNP);
             this.Name = "ViewUchenik";
             this.Size = new System.Drawing.Size(290, 237);
-            this.Load += new System.EventHandler(this.ViewUchenik_Load);
             this.ResumeLayout(false);
 
         }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 namespace Colledge
 {
     public partial class Menu : Form
@@ -15,22 +8,23 @@ namespace Colledge
         //public string builder = @"Data Source=DESKTOP-G50ABLH\SQLEXPRESS1;Initial Catalog=newind;Integrated Security=True";
         //public SqlConnection connection = null;
         //public static SqlCommand command = new SqlCommand();
-        private static byte buttonCounter = 0;
-        public static int ponter_X = 220;
-        public static int ponter_Y = 115;
+        private byte buttonCounter = 0;
+        private static int ponter_X = 220;
+        private static int ponter_Y = 115;
         public Menu()
         {
             InitializeComponent();
-            if (Autorization.getActiveUser() > 1) { mainAdd.Enabled = true; mainBtnDelete.Enabled = true; mainBtnEdit.Enabled = true; mainBtnBackUp.Enabled = true; }
+            funcCheckValidation();
+            
             /*Подключение к базе: */
             //connection = new SqlConnection(builder);
             /**************/
         }
 
-        public int Ponter_X { get { return ponter_X; } set { ponter_X = value; } }
-        public int Ponter_Y { get { return ponter_Y; } set { ponter_Y = value; } }
+        public static int Ponter_X { get { return ponter_X; } set { ponter_X = value; } }
+        public static int Ponter_Y { get { return ponter_Y; } set { ponter_Y = value; } }
 
-        private void correctPlaceUserControl()
+        public static void addSpace()
         {
             ponter_X += 300;
             if (ponter_X > 1200)
@@ -39,70 +33,92 @@ namespace Colledge
                 ponter_Y += 250;
             }
         }
+        public static void deleteSpace()
+        {
+            if (Ponter_X > 300) ponter_X -= 220;
+            if (Ponter_Y > 250) ponter_Y -= 150;
+        }
+        private void funcCheckValidation()
+        {
 
+            if (Autorization.getActiveUser() > 0)
+            {
+                mainBtnView.Enabled = true;
+                mainBtnRestore.Enabled = true;
+                mainBtnSwitch.Enabled = true;
+                mainBtnOtchet.Enabled = true;
+                mainBtnExit.Enabled = true;
+            }
+            if (Autorization.getActiveUser() > 1)
+            {
+                mainAdd.Enabled = true;
+                mainBtnDelete.Enabled = true;
+                mainBtnEdit.Enabled = true;
+            }
+            if (Autorization.getActiveUser() > 2)
+            {
+                mainBtnMore.Enabled = true;
+                mainBtnBackUp.Enabled = true;
+            }
+
+        }
         private void funcCheckUser()
         {
-            switch(Autorization.getActiveUser())
+
+            if (Autorization.getActiveUser() > 0)
             {
-                case 1:
-                    mainBtnView.Visible = true;
-                    mainBtnRestore.Visible = true;
-                    mainBtnSwitch.Visible = true;
-                    mainBtnOtchet.Visible = true;
-                    mainBtnExit.Visible = true;
-                    break;
-                case 2:
-                    mainBtnOtchet.Visible = true;
-                    mainAdd.Visible = true;
-                    mainBtnView.Visible = true;
-                    mainBtnRestore.Visible = true;
-                    mainBtnSwitch.Visible = true;
-                    mainBtnExit.Visible = true;
-                    mainBtnDelete.Visible = true;
-                    mainBtnEdit.Visible = true;
-                    break;
-                case 3:
-                    mainBtnOtchet.Visible = true;
-                    mainAdd.Visible = true;
-                    mainBtnView.Visible = true;
-                    mainBtnRestore.Visible = true;
-                    mainBtnSwitch.Visible = true;
-                    mainBtnExit.Visible = true;
-                    mainBtnDelete.Visible = true;
-                    mainBtnEdit.Visible = true;
-                    mainBtnMore.Visible = true;
-                    mainBtnBackUp.Visible = true;
-                    break;
+                mainBtnView.Visible = true;
+                mainBtnRestore.Visible = true;
+                mainBtnSwitch.Visible = true;
+                mainBtnOtchet.Visible = true;
+                mainBtnExit.Visible = true;
             }
+            if (Autorization.getActiveUser() > 1)
+            {
+                mainAdd.Visible = true;
+                mainBtnDelete.Visible = true;
+                mainBtnEdit.Visible = true;
+            }
+            if (Autorization.getActiveUser() > 2)
+            {
+                mainBtnMore.Visible = true;
+                mainBtnBackUp.Visible = true;
+            }
+            
         }
         private void funcCheckTableAdd()
         {
             switch (buttonCounter)
             {
                 case 1:
-                    tsmUchenikAdd tsmUchenikAdd = new tsmUchenikAdd();
+                    AddUchenik tsmUchenikAdd = new AddUchenik();
                     tsmUchenikAdd.Show();
                     break;
                 case 2:
-                    tsmAddUchitel tsmAddUchitel = new tsmAddUchitel();
+                    AddUchitel tsmAddUchitel = new AddUchitel();
                     tsmAddUchitel.Show();
                     break;
                 case 3:
-                    
+                    AddPredmet addPredmet = new AddPredmet();
+                    this.Controls.Add(addPredmet);
+                    addPredmet.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace();
                     break;
                 case 4:
-                    tsmAddSpecFaq tsmAddSpecFaq = new tsmAddSpecFaq();
+                    AddSpecFaq tsmAddSpecFaq = new AddSpecFaq();
                     tsmAddSpecFaq.Show();
                     break;
                 case 5:
-                    tsmJurnalAdd tsmJurnalAdd = new tsmJurnalAdd();
-                    tsmJurnalAdd.Show();
+                    AddJurnalUC addJurnalUC = new AddJurnalUC();
+                    this.Controls.Add(addJurnalUC);
+                    addJurnalUC.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace();
                     break;
                 case 6:
-                    addGrUch grUchAdd = new addGrUch();
+                    AddGrUch grUchAdd = new AddGrUch();
                     this.Controls.Add(grUchAdd);
                     grUchAdd.Location = new Point(ponter_X, ponter_Y);
-
+                    addSpace();
                     break;
             }
         }
@@ -110,26 +126,30 @@ namespace Colledge
         {
             switch (buttonCounter)
             {
-                case 1:
+                case 1: // 1 -- Вывод информации об ученике
                     ViewUchenik viewUchenik = new ViewUchenik();
-                    viewUchenik.Show();
+                    this.Controls.Add(viewUchenik);
+                    viewUchenik.Location = new Point(ponter_X, ponter_Y);
+                    addSpace();
                     ViewUchOcenka viewUchOcenka = new ViewUchOcenka();
-                    viewUchOcenka.Show();
+                    this.Controls.Add(viewUchOcenka);
+                    viewUchOcenka.Location = new Point(ponter_X, ponter_Y);
+                    addSpace();
                     break;
                 case 2:
-                    
+
                     break;
                 case 3:
-                    
+
                     break;
                 case 4:
-                    
+
                     break;
                 case 5:
-                    
+
                     break;
                 case 6:
-                    
+
                     break;
             }
         }
@@ -138,34 +158,46 @@ namespace Colledge
             switch (buttonCounter)
             {
                 case 1:
-                    UchenikEdit uchenikEdit = new UchenikEdit();
+                    EditUchenik uchenikEdit = new EditUchenik();
                     uchenikEdit.Show();
                     break;
                 case 2:
-                    UchitelEdit uchitelEdit = new UchitelEdit();
+                    EditUchitel uchitelEdit = new EditUchitel();
                     uchitelEdit.Show();
                     break;
+                
+
             }
         }
         private void funcCheckTableDelete()
         {
             switch (buttonCounter)
             {
+                case 1:
+                    mainBtnDelete.Enabled = false;
+                    break;
                 case 2:
-                    UchitelDelete uchitel = new UchitelDelete();
+                    DeleteUchenik uchitel = new DeleteUchenik();
                     uchitel.Show();
                     break;
                 case 3:
-                    PredmetDelete predmetDelete = new PredmetDelete();
-                    predmetDelete.Show();
+                    DeletePredmet predmetDelete = new DeletePredmet();
+                    this.Controls.Add(predmetDelete);
+                    predmetDelete.Location = new Point(Ponter_X, ponter_Y);
+                    addSpace();
                     break;
                 case 4:
-                    SpetFacDelete spetFacDelete = new SpetFacDelete();
+                    DeleteSpecFac spetFacDelete = new DeleteSpecFac();
                     spetFacDelete.Show();
                     break;
+                case 5:
+                    mainBtnDelete.Enabled = false;
+                    break;
                 case 6:
-                    GrUchDelete grUchDelete = new GrUchDelete();
-                    grUchDelete.Show();
+                    DeleteGrUch deleteGrUch = new DeleteGrUch();
+                    this.Controls.Add(deleteGrUch);
+                    deleteGrUch.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace();
                     break;
             }
         }
@@ -181,7 +213,7 @@ namespace Colledge
             this.Dispose();
         }
 
-        
+
 
         private void mainBtnUchenik_MouseEnter(object sender, EventArgs e)
         {
@@ -192,13 +224,14 @@ namespace Colledge
             mainBtnUchenik.BackgroundImage = new Bitmap(Properties.Resources.mainBtnUch);
             label1.Visible = false;
             buttonCounter = 1;
+            mainBtnDelete.Enabled = false;
             funcCheckUser();
         }
 
         private void mainBtnUchenik_MouseLeave(object sender, EventArgs e)
         {
-            if(buttonCounter!=1)
-            mainBtnUchenik.BackgroundImage = new Bitmap(Properties.Resources.mainBtnUchBrightness);
+            if (buttonCounter != 1)
+                mainBtnUchenik.BackgroundImage = new Bitmap(Properties.Resources.mainBtnUchBrightness);
         }
 
 
@@ -221,7 +254,7 @@ namespace Colledge
         }
 
 
-       
+
 
         private void mainBtnPredmet_MouseEnter(object sender, EventArgs e)
         {
@@ -249,16 +282,11 @@ namespace Colledge
             this.Controls.Add(addAdministrator);
             addAdministrator.Location = new Point(ponter_X, ponter_Y);
             addAdministrator.Visible = true;
-            ponter_X += 320;
-            if (ponter_X > 1200)
-            {
-                ponter_X = 224;
-                ponter_Y += 250;
-            }
+            addSpace();
         }
 
 
-      
+
 
         private void mainBtnSpecFac_MouseLeave(object sender, EventArgs e)
         {
@@ -335,6 +363,18 @@ namespace Colledge
         private void mainBtnDelete_Click(object sender, EventArgs e)
         {
             funcCheckTableDelete();
+        }
+
+        private void MainBtnOtchet_Click_1(object sender, EventArgs e)
+        {
+            Otchet otchet = new Otchet();
+            otchet.ShowDialog();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
+            
         }
     }
 

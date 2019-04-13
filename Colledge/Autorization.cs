@@ -25,6 +25,7 @@ namespace Colledge
         public static DateTime last_enter;
         private byte score = 3;
         public static string builder = @"Data Source=DESKTOP-G50ABLH\SQLEXPRESS1;Initial Catalog=newind;Integrated Security=True";
+        //public static string builder = @"Data Source=PC34_08\SQLEXPRESS;Initial Catalog=newind;Integrated Security=True";
         public static SqlConnection connection = null;
         public static SqlCommand command = new SqlCommand();
         public static SqlDataReader sdr;
@@ -102,6 +103,45 @@ namespace Colledge
             this.Close();
         }
 
-
+        public static int GetCodeOfTheTable(string select)
+        {
+            int code=-1;
+            try
+            { connection.Close();}
+            catch { }
+            try
+            {
+                connection.Open();
+                command.CommandText = select;
+                sdr = command.ExecuteReader();
+                while (sdr.Read())
+                {
+                    code = (int)sdr[0];
+                }
+                return code;
+            }
+            finally
+            {
+                connection.Close(); sdr.Close();
+            }
+        }
+        public static void GetExecuteNonQuery(string execute)
+        {
+            
+            try
+            {
+                connection.Close();
+            }
+            catch { }
+            try
+            {
+                connection.Open();
+                command.CommandText = execute;
+                command.ExecuteNonQuery();
+                
+            }
+            catch (Exception ex) { MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            finally { connection.Close(); sdr.Close(); }
+        }
     }
 }

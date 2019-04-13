@@ -10,12 +10,22 @@ using System.Windows.Forms;
 
 namespace Colledge
 {
-    public partial class UchitelDelete : Form
+    public partial class EditUchitel : Form
     {
-        public UchitelDelete()
+        public EditUchitel()
         {
             InitializeComponent();
             panel1.BackColor = Color.FromArgb(120, 218, 97, 4);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

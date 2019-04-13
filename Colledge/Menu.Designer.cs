@@ -28,23 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
-            this.student = new Colledge.Student();
-            this.grUcenicBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.grUcenicTableAdapter = new Colledge.StudentTableAdapters.GrUcenicTableAdapter();
-            this.tableAdapterManager = new Colledge.StudentTableAdapters.TableAdapterManager();
-            this.jurnalTableAdapter = new Colledge.StudentTableAdapters.JurnalTableAdapter();
-            this.predmetTableAdapter = new Colledge.StudentTableAdapters.PredmetTableAdapter();
-            this.specFacTableAdapter = new Colledge.StudentTableAdapters.SpecFacTableAdapter();
-            this.uchenikTableAdapter = new Colledge.StudentTableAdapters.UchenikTableAdapter();
-            this.uchitelTableAdapter = new Colledge.StudentTableAdapters.UchitelTableAdapter();
-            this.jurnalBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.predmetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.specFacBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uchenikBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uchitelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.mainBtnOtchet = new System.Windows.Forms.Button();
             this.mainBtnMore = new System.Windows.Forms.Button();
             this.mainBtnBackUp = new System.Windows.Forms.Button();
             this.mainBtnSwitch = new System.Windows.Forms.Button();
@@ -62,87 +48,9 @@
             this.mainBtnPredmet = new System.Windows.Forms.Button();
             this.mainBtnSpecFac = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.mainBtnOtchet = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.student)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grUcenicBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jurnalBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.predmetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specFacBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchenikBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchitelBindingSource)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // student
-            // 
-            this.student.DataSetName = "Student";
-            this.student.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // grUcenicBindingSource
-            // 
-            this.grUcenicBindingSource.DataMember = "GrUcenic";
-            this.grUcenicBindingSource.DataSource = this.student;
-            // 
-            // grUcenicTableAdapter
-            // 
-            this.grUcenicTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.GrUcenicTableAdapter = this.grUcenicTableAdapter;
-            this.tableAdapterManager.JurnalTableAdapter = this.jurnalTableAdapter;
-            this.tableAdapterManager.PredmetTableAdapter = this.predmetTableAdapter;
-            this.tableAdapterManager.SpecFacTableAdapter = this.specFacTableAdapter;
-            this.tableAdapterManager.UchenikTableAdapter = this.uchenikTableAdapter;
-            this.tableAdapterManager.UchitelTableAdapter = this.uchitelTableAdapter;
-            this.tableAdapterManager.UpdateOrder = Colledge.StudentTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // jurnalTableAdapter
-            // 
-            this.jurnalTableAdapter.ClearBeforeFill = true;
-            // 
-            // predmetTableAdapter
-            // 
-            this.predmetTableAdapter.ClearBeforeFill = true;
-            // 
-            // specFacTableAdapter
-            // 
-            this.specFacTableAdapter.ClearBeforeFill = true;
-            // 
-            // uchenikTableAdapter
-            // 
-            this.uchenikTableAdapter.ClearBeforeFill = true;
-            // 
-            // uchitelTableAdapter
-            // 
-            this.uchitelTableAdapter.ClearBeforeFill = true;
-            // 
-            // jurnalBindingSource
-            // 
-            this.jurnalBindingSource.DataMember = "Jurnal";
-            this.jurnalBindingSource.DataSource = this.student;
-            // 
-            // predmetBindingSource
-            // 
-            this.predmetBindingSource.DataMember = "Predmet";
-            this.predmetBindingSource.DataSource = this.student;
-            // 
-            // specFacBindingSource
-            // 
-            this.specFacBindingSource.DataMember = "SpecFac";
-            this.specFacBindingSource.DataSource = this.student;
-            // 
-            // uchenikBindingSource
-            // 
-            this.uchenikBindingSource.DataMember = "Uchenik";
-            this.uchenikBindingSource.DataSource = this.student;
-            // 
-            // uchitelBindingSource
-            // 
-            this.uchitelBindingSource.DataMember = "Uchitel";
-            this.uchitelBindingSource.DataSource = this.student;
             // 
             // tableLayoutPanel1
             // 
@@ -175,6 +83,26 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 115);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // mainBtnOtchet
+            // 
+            this.mainBtnOtchet.BackColor = System.Drawing.Color.Maroon;
+            this.mainBtnOtchet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.mainBtnOtchet.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainBtnOtchet.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainBtnOtchet.FlatAppearance.BorderSize = 0;
+            this.mainBtnOtchet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.mainBtnOtchet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
+            this.mainBtnOtchet.ForeColor = System.Drawing.SystemColors.Control;
+            this.mainBtnOtchet.Location = new System.Drawing.Point(441, 3);
+            this.mainBtnOtchet.Name = "mainBtnOtchet";
+            this.tableLayoutPanel1.SetRowSpan(this.mainBtnOtchet, 2);
+            this.mainBtnOtchet.Size = new System.Drawing.Size(142, 109);
+            this.mainBtnOtchet.TabIndex = 51;
+            this.mainBtnOtchet.Text = "Отчёт";
+            this.mainBtnOtchet.UseVisualStyleBackColor = false;
+            this.mainBtnOtchet.Visible = false;
+            this.mainBtnOtchet.Click += new System.EventHandler(this.MainBtnOtchet_Click_1);
             // 
             // mainBtnMore
             // 
@@ -516,29 +444,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
             this.label1.Location = new System.Drawing.Point(221, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1042, 584);
+            this.label1.Size = new System.Drawing.Size(1043, 574);
             this.label1.TabIndex = 3;
             this.label1.Text = "Добро пожаловать, для продолжения работы выберите одну из таблиц.";
-            // 
-            // mainBtnOtchet
-            // 
-            this.mainBtnOtchet.BackColor = System.Drawing.Color.Maroon;
-            this.mainBtnOtchet.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.mainBtnOtchet.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.mainBtnOtchet.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainBtnOtchet.Enabled = false;
-            this.mainBtnOtchet.FlatAppearance.BorderSize = 0;
-            this.mainBtnOtchet.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.mainBtnOtchet.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.mainBtnOtchet.ForeColor = System.Drawing.SystemColors.Control;
-            this.mainBtnOtchet.Location = new System.Drawing.Point(441, 3);
-            this.mainBtnOtchet.Name = "mainBtnOtchet";
-            this.tableLayoutPanel1.SetRowSpan(this.mainBtnOtchet, 2);
-            this.mainBtnOtchet.Size = new System.Drawing.Size(142, 109);
-            this.mainBtnOtchet.TabIndex = 51;
-            this.mainBtnOtchet.Text = "Отчёт";
-            this.mainBtnOtchet.UseVisualStyleBackColor = false;
-            this.mainBtnOtchet.Visible = false;
             // 
             // Menu
             // 
@@ -556,13 +464,7 @@
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
-            ((System.ComponentModel.ISupportInitialize)(this.student)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grUcenicBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jurnalBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.predmetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specFacBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchenikBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uchitelBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -570,20 +472,6 @@
         }
 
         #endregion
-        private Student student;
-        private System.Windows.Forms.BindingSource grUcenicBindingSource;
-        private StudentTableAdapters.GrUcenicTableAdapter grUcenicTableAdapter;
-        private StudentTableAdapters.TableAdapterManager tableAdapterManager;
-        private StudentTableAdapters.JurnalTableAdapter jurnalTableAdapter;
-        private System.Windows.Forms.BindingSource jurnalBindingSource;
-        private StudentTableAdapters.PredmetTableAdapter predmetTableAdapter;
-        private System.Windows.Forms.BindingSource predmetBindingSource;
-        private StudentTableAdapters.SpecFacTableAdapter specFacTableAdapter;
-        private System.Windows.Forms.BindingSource specFacBindingSource;
-        private StudentTableAdapters.UchenikTableAdapter uchenikTableAdapter;
-        private System.Windows.Forms.BindingSource uchenikBindingSource;
-        private StudentTableAdapters.UchitelTableAdapter uchitelTableAdapter;
-        private System.Windows.Forms.BindingSource uchitelBindingSource;
         private System.Windows.Forms.Button mainBtnGroup;
         private System.Windows.Forms.Button mainBtnSpecFac;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

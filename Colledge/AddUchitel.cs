@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Colledge
 {
-    public partial class tsmUchenikAdd : Form
+    public partial class AddUchitel : Form
     {
-        public tsmUchenikAdd()
+        public AddUchitel()
         {
             InitializeComponent();
-        }
-
-        private void tsmUchenikAddCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

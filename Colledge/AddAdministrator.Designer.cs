@@ -28,29 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Save = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lvlModificaton = new System.Windows.Forms.ComboBox();
             this.Login = new System.Windows.Forms.Label();
             this.tbLogin = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.Cancel = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // Save
-            // 
-            this.Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.Save.FlatAppearance.BorderSize = 0;
-            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Save.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Save.Location = new System.Drawing.Point(167, 113);
-            this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(69, 28);
-            this.Save.TabIndex = 52;
-            this.Save.Text = "Save";
-            this.Save.UseVisualStyleBackColor = false;
-            this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // label1
             // 
@@ -65,15 +51,16 @@
             // 
             // lvlModificaton
             // 
+            this.lvlModificaton.BackColor = System.Drawing.Color.SandyBrown;
             this.lvlModificaton.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.lvlModificaton.FormattingEnabled = true;
             this.lvlModificaton.Items.AddRange(new object[] {
             "1",
             "2",
             "3"});
-            this.lvlModificaton.Location = new System.Drawing.Point(214, 77);
+            this.lvlModificaton.Location = new System.Drawing.Point(252, 77);
             this.lvlModificaton.Name = "lvlModificaton";
-            this.lvlModificaton.Size = new System.Drawing.Size(85, 23);
+            this.lvlModificaton.Size = new System.Drawing.Size(47, 23);
             this.lvlModificaton.TabIndex = 49;
             // 
             // Login
@@ -120,30 +107,44 @@
             this.label2.TabIndex = 54;
             this.label2.Text = "Введите новый пароль:";
             // 
-            // Cancel
+            // btnCancel
             // 
-            this.Cancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
-            this.Cancel.FlatAppearance.BorderSize = 0;
-            this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Cancel.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Cancel.Location = new System.Drawing.Point(62, 113);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(69, 28);
-            this.Cancel.TabIndex = 55;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = false;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.btnCancel.FlatAppearance.BorderSize = 0;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Location = new System.Drawing.Point(48, 115);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(98, 28);
+            this.btnCancel.TabIndex = 57;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(116)))), ((int)(((byte)(34)))));
+            this.btnSave.FlatAppearance.BorderSize = 0;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Location = new System.Drawing.Point(189, 115);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(98, 28);
+            this.btnSave.TabIndex = 56;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
             // AddAdministrator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(183)))), ((int)(((byte)(130)))));
-            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbLogin);
-            this.Controls.Add(this.Save);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lvlModificaton);
             this.Controls.Add(this.Login);
@@ -157,14 +158,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Save;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox lvlModificaton;
         private System.Windows.Forms.Label Login;
         private System.Windows.Forms.TextBox tbLogin;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button Cancel;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnSave;
     }
 }

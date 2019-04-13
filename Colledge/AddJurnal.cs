@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace Colledge
 {
-    public partial class UchitelEdit : Form
+    public partial class AddJurnal : Form
     {
-        public UchitelEdit()
+        public AddJurnal()
         {
             InitializeComponent();
-            panel1.BackColor = Color.FromArgb(120, 218, 97, 4);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void tsmJurnalAdd_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

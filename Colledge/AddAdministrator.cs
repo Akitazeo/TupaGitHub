@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Colledge
@@ -19,14 +12,24 @@ namespace Colledge
 
         private void Cancel_Click(object sender, EventArgs e)
         {
-            Menu.ponter_X = 220;
-            Menu.ponter_Y = 115;
+            Menu.deleteSpace();
             this.Dispose();
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
-            if (tbLogin.Text !="" && tbPassword.Text !="" && lvlModificaton.Text !="")
+            
+        }
+
+        private void BtnCancel_Click(object sender, EventArgs e)
+        {
+            Menu.deleteSpace();
+            this.Dispose();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            if (tbLogin.Text != "" && tbPassword.Text != "" && lvlModificaton.Text != "")
                 try
                 {
                     Autorization.last_enter = DateTime.Now;

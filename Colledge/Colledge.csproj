@@ -48,6 +48,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Report.Viewer.11.0.0.0\lib\net\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -73,8 +94,17 @@
     <Compile Include="AddPredmet.Designer.cs">
       <DependentUpon>AddPredmet.cs</DependentUpon>
     </Compile>
-    <Compile Include="DropDownBtn.cs">
-      <SubType>Component</SubType>
+    <Compile Include="AddJurnalUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddJurnalUC.Designer.cs">
+      <DependentUpon>AddJurnalUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteGrUch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteGrUch.Designer.cs">
+      <DependentUpon>DeleteGrUch.cs</DependentUpon>
     </Compile>
     <Compile Include="Autorization.cs">
       <SubType>Form</SubType>
@@ -82,17 +112,17 @@
     <Compile Include="Autorization.Designer.cs">
       <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="addGrUch.cs">
+    <Compile Include="AddGrUch.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="addGrUch.Designer.cs">
-      <DependentUpon>addGrUch.cs</DependentUpon>
+    <Compile Include="AddGrUch.Designer.cs">
+      <DependentUpon>AddGrUch.cs</DependentUpon>
     </Compile>
-    <Compile Include="GrUchDelete.cs">
-      <SubType>Form</SubType>
+    <Compile Include="DeletePredmet.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GrUchDelete.Designer.cs">
-      <DependentUpon>GrUchDelete.cs</DependentUpon>
+    <Compile Include="DeletePredmet.Designer.cs">
+      <DependentUpon>DeletePredmet.cs</DependentUpon>
     </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
@@ -100,11 +130,11 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="PredmetDelete.cs">
+    <Compile Include="Otchet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PredmetDelete.Designer.cs">
-      <DependentUpon>PredmetDelete.cs</DependentUpon>
+    <Compile Include="Otchet.Designer.cs">
+      <DependentUpon>Otchet.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,58 +143,53 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SpetFacDelete.cs">
+    <Compile Include="DeleteSpecFac.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SpetFacDelete.Designer.cs">
-      <DependentUpon>SpetFacDelete.cs</DependentUpon>
+    <Compile Include="DeleteSpecFac.Designer.cs">
+      <DependentUpon>DeleteSpecFac.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Student.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Student.xsd</DependentUpon>
     </Compile>
-    <Compile Include="tsmAddSpecFaq.cs">
+    <Compile Include="AddSpecFaq.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tsmAddSpecFaq.Designer.cs">
-      <DependentUpon>tsmAddSpecFaq.cs</DependentUpon>
+    <Compile Include="AddSpecFaq.Designer.cs">
+      <DependentUpon>AddSpecFaq.cs</DependentUpon>
     </Compile>
-    <Compile Include="tsmAddUchitel.cs">
+    <Compile Include="AddUchitel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tsmAddUchitel.Designer.cs">
-      <DependentUpon>tsmAddUchitel.cs</DependentUpon>
+    <Compile Include="AddUchitel.Designer.cs">
+      <DependentUpon>AddUchitel.cs</DependentUpon>
     </Compile>
-    <Compile Include="tsmJurnalAdd.cs">
+    <Compile Include="AddJurnal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tsmJurnalAdd.Designer.cs">
-      <DependentUpon>tsmJurnalAdd.cs</DependentUpon>
+    <Compile Include="AddJurnal.Designer.cs">
+      <DependentUpon>AddJurnal.cs</DependentUpon>
     </Compile>
-    <Compile Include="tsmUchenikAdd.cs">
+    <Compile Include="EditUchenik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="tsmUchenikAdd.Designer.cs">
-      <DependentUpon>tsmUchenikAdd.cs</DependentUpon>
+    <Compile Include="EditUchenik.Designer.cs">
+      <DependentUpon>EditUchenik.cs</DependentUpon>
     </Compile>
-    <Compile Include="UchenikEdit.cs">
+    <Compile Include="DeleteUchenik.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UchenikEdit.Designer.cs">
-      <DependentUpon>UchenikEdit.cs</DependentUpon>
+    <Compile Include="DeleteUchenik.Designer.cs">
+      <DependentUpon>DeleteUchenik.cs</DependentUpon>
     </Compile>
-    <Compile Include="UchitelDelete.cs">
+    <Compile Include="EditUchitel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UchitelDelete.Designer.cs">
-      <DependentUpon>UchitelDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UchitelEdit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UchitelEdit.Designer.cs">
-      <DependentUpon>UchitelEdit.cs</DependentUpon>
+    <Compile Include="EditUchitel.Designer.cs">
+      <DependentUpon>EditUchitel.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUchenik.cs">
       <SubType>UserControl</SubType>
@@ -184,49 +209,53 @@
     <EmbeddedResource Include="AddPredmet.resx">
       <DependentUpon>AddPredmet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddJurnalUC.resx">
+      <DependentUpon>AddJurnalUC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="addGrUch.resx">
-      <DependentUpon>addGrUch.cs</DependentUpon>
+    <EmbeddedResource Include="AddGrUch.resx">
+      <DependentUpon>AddGrUch.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GrUchDelete.resx">
-      <DependentUpon>GrUchDelete.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteGrUch.resx">
+      <DependentUpon>DeleteGrUch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletePredmet.resx">
+      <DependentUpon>DeletePredmet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PredmetDelete.resx">
-      <DependentUpon>PredmetDelete.cs</DependentUpon>
+    <EmbeddedResource Include="Otchet.resx">
+      <DependentUpon>Otchet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="SpetFacDelete.resx">
-      <DependentUpon>SpetFacDelete.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteSpecFac.resx">
+      <DependentUpon>DeleteSpecFac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tsmAddSpecFaq.resx">
-      <DependentUpon>tsmAddSpecFaq.cs</DependentUpon>
+    <EmbeddedResource Include="TestReport.rdlc" />
+    <EmbeddedResource Include="AddSpecFaq.resx">
+      <DependentUpon>AddSpecFaq.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tsmAddUchitel.resx">
-      <DependentUpon>tsmAddUchitel.cs</DependentUpon>
+    <EmbeddedResource Include="AddUchitel.resx">
+      <DependentUpon>AddUchitel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tsmJurnalAdd.resx">
-      <DependentUpon>tsmJurnalAdd.cs</DependentUpon>
+    <EmbeddedResource Include="AddJurnal.resx">
+      <DependentUpon>AddJurnal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="tsmUchenikAdd.resx">
-      <DependentUpon>tsmUchenikAdd.cs</DependentUpon>
+    <EmbeddedResource Include="EditUchenik.resx">
+      <DependentUpon>EditUchenik.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UchenikEdit.resx">
-      <DependentUpon>UchenikEdit.cs</DependentUpon>
+    <EmbeddedResource Include="DeleteUchenik.resx">
+      <DependentUpon>DeleteUchenik.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UchitelDelete.resx">
-      <DependentUpon>UchitelDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UchitelEdit.resx">
-      <DependentUpon>UchitelEdit.cs</DependentUpon>
+    <EmbeddedResource Include="EditUchitel.resx">
+      <DependentUpon>EditUchitel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewUchenik.resx">
       <DependentUpon>ViewUchenik.cs</DependentUpon>
@@ -234,6 +263,7 @@
     <EmbeddedResource Include="ViewUchOcenka.resx">
       <DependentUpon>ViewUchOcenka.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -338,6 +368,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\MainBtnJurnalBrightness1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

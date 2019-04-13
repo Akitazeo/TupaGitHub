@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Colledge
 {
-    public partial class GrUchDelete : Form
+    public partial class AddSpecFaq : Form
     {
-        public GrUchDelete()
+        public AddSpecFaq()
         {
             InitializeComponent();
         }
