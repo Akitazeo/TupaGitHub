@@ -15,7 +15,6 @@ namespace Colledge
         {
             InitializeComponent();
             funcCheckValidation();
-            
             /*Подключение к базе: */
             //connection = new SqlConnection(builder);
             /**************/
@@ -24,13 +23,13 @@ namespace Colledge
         public static int Ponter_X { get { return ponter_X; } set { ponter_X = value; } }
         public static int Ponter_Y { get { return ponter_Y; } set { ponter_Y = value; } }
 
-        public static void addSpace()
+        public static void addSpace(int x)
         {
-            ponter_X += 300;
+            ponter_X += x;
             if (ponter_X > 1200)
             {
                 ponter_X = 220;
-                ponter_Y += 250;
+                ponter_Y += 300;
             }
         }
         public static void deleteSpace()
@@ -91,34 +90,41 @@ namespace Colledge
             switch (buttonCounter)
             {
                 case 1:
-                    AddUchenik tsmUchenikAdd = new AddUchenik();
-                    tsmUchenikAdd.Show();
-                    break;
+                    AddUchenik addUchenik = new AddUchenik();
+                    this.Controls.Add(addUchenik);
+                    addUchenik.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(225+20);
+                        break;
                 case 2:
-                    AddUchitel tsmAddUchitel = new AddUchitel();
-                    tsmAddUchitel.Show();
+                    AddUchitel addUchitel = new AddUchitel();
+                    this.Controls.Add(addUchitel);
+                    addUchitel.Location = new Point(Ponter_X, ponter_Y);
+                    addSpace(200 + 20);
                     break;
                 case 3:
                     AddPredmet addPredmet = new AddPredmet();
                     this.Controls.Add(addPredmet);
                     addPredmet.Location = new Point(Ponter_X, Ponter_Y);
-                    addSpace();
+                    addSpace(257+20);
                     break;
                 case 4:
-                    AddSpecFaq tsmAddSpecFaq = new AddSpecFaq();
-                    tsmAddSpecFaq.Show();
+                    AddSpecFac addSpecFac = new AddSpecFac();
+                    this.Controls.Add(addSpecFac);
+                    addSpecFac.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(225 + 20);
                     break;
+                    
                 case 5:
-                    AddJurnalUC addJurnalUC = new AddJurnalUC();
+                    AddJurnal addJurnalUC = new AddJurnal();
                     this.Controls.Add(addJurnalUC);
                     addJurnalUC.Location = new Point(Ponter_X, Ponter_Y);
-                    addSpace();
+                    addSpace(337+20);
                     break;
                 case 6:
                     AddGrUch grUchAdd = new AddGrUch();
                     this.Controls.Add(grUchAdd);
                     grUchAdd.Location = new Point(ponter_X, ponter_Y);
-                    addSpace();
+                    addSpace(178+20);
                     break;
             }
         }
@@ -130,11 +136,11 @@ namespace Colledge
                     ViewUchenik viewUchenik = new ViewUchenik();
                     this.Controls.Add(viewUchenik);
                     viewUchenik.Location = new Point(ponter_X, ponter_Y);
-                    addSpace();
+                    addSpace(290+20);
                     ViewUchOcenka viewUchOcenka = new ViewUchOcenka();
                     this.Controls.Add(viewUchOcenka);
                     viewUchOcenka.Location = new Point(ponter_X, ponter_Y);
-                    addSpace();
+                    addSpace(290+20);
                     break;
                 case 2:
 
@@ -158,12 +164,16 @@ namespace Colledge
             switch (buttonCounter)
             {
                 case 1:
-                    EditUchenik uchenikEdit = new EditUchenik();
-                    uchenikEdit.Show();
+                    EditUchUK editUchUK = new EditUchUK();
+                    this.Controls.Add(editUchUK);
+                    editUchUK.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(390+20);
                     break;
                 case 2:
-                    EditUchitel uchitelEdit = new EditUchitel();
-                    uchitelEdit.Show();
+                    EditUchitell editUchitell = new EditUchitell();
+                    this.Controls.Add(editUchitell);
+                    editUchitell.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(266 + 20);
                     break;
                 
 
@@ -177,18 +187,22 @@ namespace Colledge
                     mainBtnDelete.Enabled = false;
                     break;
                 case 2:
-                    DeleteUchenik uchitel = new DeleteUchenik();
-                    uchitel.Show();
+                    DeleteUchitel deleteUchitel = new DeleteUchitel();
+                    this.Controls.Add(deleteUchitel);
+                    deleteUchitel.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(225 + 20); //??? Проверить размеры формы.
                     break;
                 case 3:
                     DeletePredmet predmetDelete = new DeletePredmet();
                     this.Controls.Add(predmetDelete);
                     predmetDelete.Location = new Point(Ponter_X, ponter_Y);
-                    addSpace();
+                    addSpace(225);
                     break;
                 case 4:
-                    DeleteSpecFac spetFacDelete = new DeleteSpecFac();
-                    spetFacDelete.Show();
+                    DeleteSpecFacultet deleteSpecFacultet = new DeleteSpecFacultet();
+                    this.Controls.Add(deleteSpecFacultet);
+                    deleteSpecFacultet.Location = new Point(Ponter_X, Ponter_Y);
+                    addSpace(273 + 20);
                     break;
                 case 5:
                     mainBtnDelete.Enabled = false;
@@ -197,7 +211,7 @@ namespace Colledge
                     DeleteGrUch deleteGrUch = new DeleteGrUch();
                     this.Controls.Add(deleteGrUch);
                     deleteGrUch.Location = new Point(Ponter_X, Ponter_Y);
-                    addSpace();
+                    addSpace(267+20);
                     break;
             }
         }
@@ -281,8 +295,7 @@ namespace Colledge
             AddAdministrator addAdministrator = new AddAdministrator();
             this.Controls.Add(addAdministrator);
             addAdministrator.Location = new Point(ponter_X, ponter_Y);
-            addAdministrator.Visible = true;
-            addSpace();
+            addSpace(306+20);
         }
 
 
@@ -369,12 +382,18 @@ namespace Colledge
         {
             Otchet otchet = new Otchet();
             otchet.ShowDialog();
+           
         }
 
         private void Menu_Load(object sender, EventArgs e)
         {
 
             
+        }
+
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

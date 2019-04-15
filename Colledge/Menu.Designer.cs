@@ -442,10 +442,10 @@
             this.label1.BackColor = System.Drawing.Color.Maroon;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(221, 115);
+            this.label1.Location = new System.Drawing.Point(218, 115);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1043, 574);
-            this.label1.TabIndex = 3;
+            this.label1.Size = new System.Drawing.Size(1046, 574);
+            this.label1.TabIndex = 4;
             this.label1.Text = "Добро пожаловать, для продолжения работы выберите одну из таблиц.";
             // 
             // Menu
@@ -488,8 +488,8 @@
         private System.Windows.Forms.Button mainBtnView;
         private System.Windows.Forms.Button mainAdd;
         private System.Windows.Forms.Button mainBtnDelete;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button mainBtnMore;
         private System.Windows.Forms.Button mainBtnOtchet;
+        private System.Windows.Forms.Label label1;
     }
 }

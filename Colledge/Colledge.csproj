@@ -94,11 +94,29 @@
     <Compile Include="AddPredmet.Designer.cs">
       <DependentUpon>AddPredmet.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddJurnalUC.cs">
+    <Compile Include="AddJurnal.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="AddJurnalUC.Designer.cs">
-      <DependentUpon>AddJurnalUC.cs</DependentUpon>
+    <Compile Include="AddJurnal.Designer.cs">
+      <DependentUpon>AddJurnal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddSpecFac.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddSpecFac.Designer.cs">
+      <DependentUpon>AddSpecFac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUchenik.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUchenik.Designer.cs">
+      <DependentUpon>AddUchenik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddUchitel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddUchitel.Designer.cs">
+      <DependentUpon>AddUchitel.cs</DependentUpon>
     </Compile>
     <Compile Include="DeleteGrUch.cs">
       <SubType>UserControl</SubType>
@@ -124,6 +142,30 @@
     <Compile Include="DeletePredmet.Designer.cs">
       <DependentUpon>DeletePredmet.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeleteSpecFacultet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteSpecFacultet.Designer.cs">
+      <DependentUpon>DeleteSpecFacultet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteUchitel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DeleteUchitel.Designer.cs">
+      <DependentUpon>DeleteUchitel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUchitell.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditUchitell.Designer.cs">
+      <DependentUpon>EditUchitell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditUchUK.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditUchUK.Designer.cs">
+      <DependentUpon>EditUchUK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,53 +185,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="DeleteSpecFac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteSpecFac.Designer.cs">
-      <DependentUpon>DeleteSpecFac.cs</DependentUpon>
-    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Student.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Student.xsd</DependentUpon>
     </Compile>
-    <Compile Include="AddSpecFaq.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddSpecFaq.Designer.cs">
-      <DependentUpon>AddSpecFaq.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddUchitel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddUchitel.Designer.cs">
-      <DependentUpon>AddUchitel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddJurnal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddJurnal.Designer.cs">
-      <DependentUpon>AddJurnal.cs</DependentUpon>
-    </Compile>
     <Compile Include="EditUchenik.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditUchenik.Designer.cs">
       <DependentUpon>EditUchenik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteUchenik.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteUchenik.Designer.cs">
-      <DependentUpon>DeleteUchenik.cs</DependentUpon>
-    </Compile>
-    <Compile Include="EditUchitel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EditUchitel.Designer.cs">
-      <DependentUpon>EditUchitel.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewUchenik.cs">
       <SubType>UserControl</SubType>
@@ -209,8 +215,17 @@
     <EmbeddedResource Include="AddPredmet.resx">
       <DependentUpon>AddPredmet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddJurnalUC.resx">
-      <DependentUpon>AddJurnalUC.cs</DependentUpon>
+    <EmbeddedResource Include="AddJurnal.resx">
+      <DependentUpon>AddJurnal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddSpecFac.resx">
+      <DependentUpon>AddSpecFac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUchenik.resx">
+      <DependentUpon>AddUchenik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddUchitel.resx">
+      <DependentUpon>AddUchitel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Autorization.resx">
       <DependentUpon>Autorization.cs</DependentUpon>
@@ -224,6 +239,18 @@
     <EmbeddedResource Include="DeletePredmet.resx">
       <DependentUpon>DeletePredmet.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeleteSpecFacultet.resx">
+      <DependentUpon>DeleteSpecFacultet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUchitel.resx">
+      <DependentUpon>DeleteUchitel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUchitell.resx">
+      <DependentUpon>EditUchitell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUchUK.resx">
+      <DependentUpon>EditUchUK.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,27 +262,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DeleteSpecFac.resx">
-      <DependentUpon>DeleteSpecFac.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TestReport.rdlc" />
-    <EmbeddedResource Include="AddSpecFaq.resx">
-      <DependentUpon>AddSpecFaq.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddUchitel.resx">
-      <DependentUpon>AddUchitel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddJurnal.resx">
-      <DependentUpon>AddJurnal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EditUchenik.resx">
       <DependentUpon>EditUchenik.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteUchenik.resx">
-      <DependentUpon>DeleteUchenik.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EditUchitel.resx">
-      <DependentUpon>EditUchitel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewUchenik.resx">
       <DependentUpon>ViewUchenik.cs</DependentUpon>

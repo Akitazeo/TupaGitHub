@@ -62,6 +62,7 @@
             this.lvlModificaton.Name = "lvlModificaton";
             this.lvlModificaton.Size = new System.Drawing.Size(47, 23);
             this.lvlModificaton.TabIndex = 49;
+            this.lvlModificaton.SelectedIndexChanged += new System.EventHandler(this.LvlModificaton_SelectedIndexChanged);
             // 
             // Login
             // 
@@ -150,6 +151,7 @@
             this.Controls.Add(this.Login);
             this.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximumSize = new System.Drawing.Size(306, 156);
             this.Name = "AddAdministrator";
             this.Size = new System.Drawing.Size(306, 156);
             this.ResumeLayout(false);

@@ -33,17 +33,22 @@ namespace Colledge
 
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Autorization.connection.Open();
-                Autorization.command.CommandText = "DELETE FROM GrUcenic WHERE Cod_gr = (Select Cod_gr FROM GrUcenic WHERE N_gr = '" + groupDelete.Text + "')";
-                Autorization.command.ExecuteNonQuery();
-                MessageBox.Show("Успешно добавлено!");
-                groupDelete.Items.Clear();
-                funcUpdateItems();
-            }
-            catch (Exception ex) { MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); groupDelete.Text = ""; }
-            finally { Autorization.connection.Close(); }
+
+                int Cod_gr = Autorization.GetCodeOfTheTable("Select Cod_gr FROM GrUcenic WHERE N_gr = '" + groupDelete.Text + "'");
+                if (Autorization.GetExecuteNonQuery("Delete FROM Jurnal WHERE Cod_Uch in " +
+                       "(Select Cod_Uch FROM Uchenik where Cod_gr = " + Cod_gr + ")"))
+                {
+                    if (Autorization.GetExecuteNonQuery("Delete from Uchenik where Cod_gr = " + Cod_gr))
+                    {
+                        if (Autorization.GetExecuteNonQuery("Delete from GrUchic = " + Cod_gr))
+                        {
+                            MessageBox.Show("Группа " + groupDelete.Text + " успешно удалена!");
+                            groupDelete.Items.Clear();
+                            funcUpdateItems();
+                        }
+                    }
+                }
+            
         }
     }
 }

@@ -1,23 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Colledge
 {
-    
+
     public partial class Autorization : Form
     {
 
         public Autorization()
         {
-            
+
             connection = new SqlConnection(builder);
             InitializeComponent();
             panel2.BackColor = Color.FromArgb(120, 253, 253, 196);
@@ -29,15 +23,15 @@ namespace Colledge
         public static SqlConnection connection = null;
         public static SqlCommand command = new SqlCommand();
         public static SqlDataReader sdr;
-        private static int ActiveUser=0;
-        
+        private static int ActiveUser = -1;
+
         public static int getActiveUser() { return ActiveUser; }
         public static void setActiveUser(int value) { ActiveUser = value; }
 
         private void btnAutorization_Click(object sender, EventArgs e)
         {
             last_enter = DateTime.Now;
-            
+
             string login = tbLogin.Text;
             connection.ConnectionString = builder; //Соеденяюсь с БД
             connection.Open();                      // Открываю доступ
@@ -45,18 +39,18 @@ namespace Colledge
                 "FROM Userlog " +
                 "WHERE (Lgn = '" + tbLogin.Text + "') and " +
                 "(Pass = '" + tbPassword.Text + "')";
-            try 
+            try
             {
                 command.Connection = connection;     // Указываю для какого соеденения предназначен запрос
                 sdr = command.ExecuteReader();       // Читаю результат из БД
                 if (sdr.HasRows)                    // Проверяю наличие строк
                 {
                     while (sdr.Read())
-                    setActiveUser(sdr.GetByte(4));
+                        setActiveUser(sdr.GetByte(4));
                     this.Dispose();
                     command.Connection.Close();
                     command.Connection.Open();
-                    command.CommandText = "UPDATE Userlog SET Last_Enter = '"+ last_enter.ToString("yyyy-dd-MM HH:mm:ss") + "' WHERE Lgn = '" + login + "'";
+                    command.CommandText = "UPDATE Userlog SET Last_Enter = '" + last_enter.ToString("yyyy-dd-MM HH:mm:ss") + "' WHERE Lgn = '" + login + "'";
                     command.ExecuteNonQuery();
                 }
                 else
@@ -74,7 +68,7 @@ namespace Colledge
                 command.Connection.Close();
             }
 
-           
+
         }
 
 
@@ -105,9 +99,9 @@ namespace Colledge
 
         public static int GetCodeOfTheTable(string select)
         {
-            int code=-1;
+            int code = -1;
             try
-            { connection.Close();}
+            { connection.Close(); }
             catch { }
             try
             {
@@ -125,9 +119,9 @@ namespace Colledge
                 connection.Close(); sdr.Close();
             }
         }
-        public static void GetExecuteNonQuery(string execute)
+        public static bool GetExecuteNonQuery(string execute)
         {
-            
+
             try
             {
                 connection.Close();
@@ -138,10 +132,12 @@ namespace Colledge
                 connection.Open();
                 command.CommandText = execute;
                 command.ExecuteNonQuery();
-                
+
             }
-            catch (Exception ex) { MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex)
+            { MessageBox.Show(ex.ToString(), "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); return false; }
             finally { connection.Close(); sdr.Close(); }
+            return true;
         }
     }
 }

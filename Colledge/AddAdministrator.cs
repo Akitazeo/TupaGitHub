@@ -49,5 +49,10 @@ namespace Colledge
                 finally { Autorization.command.Connection.Close(); Autorization.connection.Close(); }
             else MessageBox.Show("Произошла ошибка.", "Неудача..");
         }
+
+        private void LvlModificaton_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

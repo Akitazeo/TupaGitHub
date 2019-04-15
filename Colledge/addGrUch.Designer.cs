@@ -42,9 +42,9 @@
             this.Cancel.FlatAppearance.BorderSize = 0;
             this.Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancel.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Cancel.Location = new System.Drawing.Point(7, 150);
+            this.Cancel.Location = new System.Drawing.Point(1, 125);
             this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(69, 28);
+            this.Cancel.Size = new System.Drawing.Size(69, 25);
             this.Cancel.TabIndex = 63;
             this.Cancel.Text = "Cancel";
             this.Cancel.UseVisualStyleBackColor = false;
@@ -55,10 +55,10 @@
             this.tbGroup.BackColor = System.Drawing.Color.SandyBrown;
             this.tbGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbGroup.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGroup.Location = new System.Drawing.Point(43, 113);
+            this.tbGroup.Location = new System.Drawing.Point(7, 95);
             this.tbGroup.MaxLength = 15;
             this.tbGroup.Name = "tbGroup";
-            this.tbGroup.Size = new System.Drawing.Size(110, 22);
+            this.tbGroup.Size = new System.Drawing.Size(168, 22);
             this.tbGroup.TabIndex = 56;
             // 
             // Save
@@ -67,9 +67,9 @@
             this.Save.FlatAppearance.BorderSize = 0;
             this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
-            this.Save.Location = new System.Drawing.Point(112, 150);
+            this.Save.Location = new System.Drawing.Point(106, 125);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(69, 28);
+            this.Save.Size = new System.Drawing.Size(69, 25);
             this.Save.TabIndex = 60;
             this.Save.Text = "Save";
             this.Save.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(8, 17);
+            this.label1.Location = new System.Drawing.Point(3, -1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(173, 25);
             this.label1.TabIndex = 59;
@@ -91,9 +91,9 @@
             this.cbFac.BackColor = System.Drawing.Color.SandyBrown;
             this.cbFac.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.cbFac.FormattingEnabled = true;
-            this.cbFac.Location = new System.Drawing.Point(44, 45);
+            this.cbFac.Location = new System.Drawing.Point(7, 27);
             this.cbFac.Name = "cbFac";
-            this.cbFac.Size = new System.Drawing.Size(110, 23);
+            this.cbFac.Size = new System.Drawing.Size(168, 23);
             this.cbFac.TabIndex = 58;
             this.cbFac.SelectedIndexChanged += new System.EventHandler(this.cbFac_SelectedIndexChanged);
             // 
@@ -102,7 +102,7 @@
             this.Login.BackColor = System.Drawing.Color.Transparent;
             this.Login.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Login.ForeColor = System.Drawing.Color.Black;
-            this.Login.Location = new System.Drawing.Point(40, 86);
+            this.Login.Location = new System.Drawing.Point(35, 68);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(109, 24);
             this.Login.TabIndex = 57;
@@ -121,9 +121,9 @@
             this.Controls.Add(this.Login);
             this.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MaximumSize = new System.Drawing.Size(194, 196);
+            this.MaximumSize = new System.Drawing.Size(178, 155);
             this.Name = "AddGrUch";
-            this.Size = new System.Drawing.Size(194, 196);
+            this.Size = new System.Drawing.Size(178, 155);
             this.ResumeLayout(false);
             this.PerformLayout();
 

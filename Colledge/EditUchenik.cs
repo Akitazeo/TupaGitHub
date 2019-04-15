@@ -55,5 +55,35 @@ namespace Colledge
         {
             this.Close();
         }
+
+        private void BtnAutorization_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ComboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void EditUchenik_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
